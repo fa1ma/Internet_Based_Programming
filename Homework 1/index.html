@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <title>welcome</title>
+    <div class="w3-fluid" style="text-indent: 1em;">
+        <h2>WELCOME</h2>
+    </div>
+</head>
+<body>
+
+<div class="container">
+    Click to learn the Code!
+    <br>
+    Open on this page:
+    <button class="button"><a id="link1" href="https://www.w3schools.com">W3 School</a></button>
+    or on an new tab:
+    <button class="button"><a id="link2" href="https://www.w3schools.com" target="_blank">W3 School</a></button>
+    <br>
+    <br>
+    Click the button to change the link:
+    <button onclick="changeURL()">change the link</button>
+</div>
+
+<div class="container">
+    <h4>ShortCuts;</h4>
+    <li><a href="#Title-1">Title-1</a></li>
+    <li><a href="#Title-2">Title-2</a></li>
+    <li><a href="#Title-3">Title-3</a></li>
+</div>
+
+<div class="container">
+    Learn About Us:
+    <a href="aboutUs.html">About Us</a>
+    <br>
+    Contact Us:
+    <li><a href="tel:444 0 478">call:444 0 478</a></li>
+    <li><a href="mailto:iletisim@karabuk.edu.tr">Send an email</a></li>
+</div>
+
+<div class="container1">
+    <h3 id="Title-1">TITLE 1</h3>
+    <p>the content of the title 1</p>
+</div>
+
+<div class="container1">
+    <h3 id="Title-2">TITLE 2</h3>
+    <p>the content of the title 2</p>
+</div>
+
+<div class="container1" style="height: 45em">
+    <h3 id="Title-3">TITLE 3</h3>
+    <p>the content of the title 3</p>
+</div>
+
+<h2>End of the Page.</h2>
+
+<script type="text/javascript">
+    function changeURL(){
+        document.getElementById('link1').innerHTML="go to JavaPoint"
+        document.getElementById('link1').href="https://www.javatpoint.com"
+        document.getElementById('link2').innerHTML="go to JavaPoint"
+        document.getElementById('link2').href="https://www.javatpoint.com"
+    }
+</script>
+
+</body>
+</html>
