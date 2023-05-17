@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Example</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+<h2>GET Form Example</h2>
+<form action="http://example.com/submit" method="get" target="_blank">
+    <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="name"><br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="name"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <h2>POST Form Example</h2>
+        <form action="http://example.com/submit" method="post" target="_self">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+<h2>Draw on Canvas;</h2>
+<canvas id="canvas" width="500" height="500"></canvas>
+
+<script>
+    // Get the canvas element
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Set the initial drawing color
+    ctx.fillStyle = "red";
+
+    // Add event listeners for mouse actions
+    canvas.addEventListener("mousedown", startDrawing);
+    canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("mouseup", stopDrawing);
+
+    // Variable to keep track of drawing state
+    let isDrawing = false;
+
+    // Function to start drawing
+    function startDrawing(event) {
+        isDrawing = true;
+        draw(event);
+    }
+
+    // Function to draw on the canvas
+    function draw(event) {
+        if (!isDrawing) return;
+
+        // Get the mouse coordinates relative to the canvas
+        const x = event.offsetX;
+        const y = event.offsetY;
+
+        // Draw a filled rectangle at the mouse coordinates
+        ctx.fillRect(x, y, 5, 5);
+    }
+
+    // Function to stop drawing
+    function stopDrawing() {
+        isDrawing = false;
+    }
+</script>
+
+</body>
+</html>

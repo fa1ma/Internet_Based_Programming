@@ -1,0 +1,10 @@
+form{
+    background-color: honeydew;
+    padding: 10px;
+    border-style: groove;
+    width: fit-content;
+}
+#canvas {
+    border: 1px solid black;
+
+}
