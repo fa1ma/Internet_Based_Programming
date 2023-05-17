@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: darkseagreen;
+    padding: 10px;
+}
+.grid-item {
+    background-color: honeydew;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+}
