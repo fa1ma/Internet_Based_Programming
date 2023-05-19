@@ -1,8 +1,14 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
 form{
     background-color: honeydew;
     border-style: groove;
-    padding: 10px;
-    width: fit-content;
+    padding: 20px;
+    width: 20%;
 }
 .error {
     color: red;
