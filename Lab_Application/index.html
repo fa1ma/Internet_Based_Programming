@@ -6,25 +6,55 @@
     <link href="mystyle.css" rel="stylesheet">
 </head>
 <body>
-
-<h3>Student Registration Form</h3>
-<form action="process.php" method="post">
+<h2>Student Registration Form</h2>
+<form name="myForm" action="process.php" method="POST" onsubmit="return validateForm()">
     <label for="id">ID:</label>
-    <input id="id" name="id" required type="text"><br>
+    <input type="text" id="id" name="id" required><br><br>
     <label for="full_name">Full Name:</label>
-    <input id="full_name" name="full_name" required type="text"><br>
+    <input type="text" id="full_name" name="full_name" required><br><br>
     <label for="email">Email:</label>
-    <input id="email" name="email" required type="text"><br>
-    Gender:&nbsp;&nbsp;
-    <label for="female">Female:</label>
-    <input id="female" name="gender" type="radio" >
-    <label for="male">Male:</label>
-    <input id="male" name="gender" type="radio" ><br><br>
-    <button onclick="myFunction()">Try it</button>
+    <input type="email" id="email" name="email" required><br><br>
+    <label>Gender:</label>
+    <input type="radio" id="female" name="gender" value="Female" required>
+    <label for="female">Female</label>
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label><br><br>
+    <div id="errorContainer"></div>
+    <input type="submit" value="Submit">
 </form>
 <script>
-    function myFunction() {
-        alert("The information has been successfully added.");
+    function validateForm() {
+        var id = document.forms["myForm"]["id"].value;
+        var fullName = document.forms["myForm"]["full_name"].value;
+        var email = document.forms["myForm"]["email"].value;
+        var gender = document.forms["myForm"]["gender"].value;
+        var errors = [];
+        if (id === "") {
+            errors.push("ID is required.");
+        }
+        if (fullName === "") {
+            errors.push("Full Name is required.");
+        }
+        if (email === "") {
+            errors.push("Email is required.");
+        } else {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                errors.push("Invalid email format.");
+            }
+        }
+        if (gender === undefined || gender === "") {
+            errors.push("Gender is required.");
+        }
+        var errorContainer = document.getElementById("errorContainer");
+        errorContainer.innerHTML = "";
+        if (errors.length > 0) {
+            for (var i = 0; i < errors.length; i++) {
+                errorContainer.innerHTML += "<p class='error'>" + errors[i] + "</p>";
+            }
+            return false;
+        }
+        return true;
     }
 </script>
 </body>
