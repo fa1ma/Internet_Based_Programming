@@ -3,9 +3,7 @@ form{
     border-style: groove;
     padding: 10px;
     width: fit-content;
-
 }
-div{
-    display: flex;
-    justify-content: center;
+.error {
+    color: red;
 }
