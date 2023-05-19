@@ -6,6 +6,7 @@
     <link href="mystyle.css" rel="stylesheet">
 </head>
 <body>
+
 <h3>Student Registration Form</h3>
 <form action="process.php" method="post">
     <label for="id">ID:</label>
@@ -19,7 +20,12 @@
     <input id="female" name="gender" type="radio" >
     <label for="male">Male:</label>
     <input id="male" name="gender" type="radio" ><br><br>
-    <input type="submit" name="submit" value="Submit">
+    <button onclick="myFunction()">Try it</button>
 </form>
+<script>
+    function myFunction() {
+        alert("The information has been successfully added.");
+    }
+</script>
 </body>
 </html>
